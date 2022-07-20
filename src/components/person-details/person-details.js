@@ -16,15 +16,16 @@ export default class PersonDetails extends Component {
 			this.updatePerson();
 		}
 	}
-	updatePerson() {
+	updatePerson = () => {
 		const { personId } = this.props;
+
 		if (!personId) {
 			return;
 		}
 		this.swapiService.getPerson(personId).then((person) => {
 			this.setState({ person });
 		});
-	}
+	};
 
 	render() {
 		if (!this.state.person) {
