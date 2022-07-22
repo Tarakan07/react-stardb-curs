@@ -10,11 +10,15 @@ import "./app.css";
 import ErrorIndicator from "../error-indicator";
 
 export default class App extends Component {
+	swapiService = new SwapiService();
 	state = {
 		selectedPerson: 5,
 		hasError: false,
 	};
-	swapiService = new SwapiService();
+
+	onPersonSelected = (id) => {
+		this.setState({ selectedPerson: id });
+	};
 	componentDidCatch() {
 		this.setState({ hasError: true });
 	}
@@ -35,6 +39,11 @@ export default class App extends Component {
 						<ItemList
 							onItemSelected={this.onPersonSelected}
 							getData={this.swapiService.getAllPlanets}
+							renderItem={(item) => (
+								<span>
+									{item.name} <button>!</button>{" "}
+								</span>
+							)}
 						/>
 					</div>
 					<div className="col-md-6">
@@ -47,6 +56,7 @@ export default class App extends Component {
 						<ItemList
 							onItemSelected={this.onPersonSelected}
 							getData={this.swapiService.getAllStarships}
+							renderItem={(item) => item.name}
 						/>
 					</div>
 					<div className="col-md-6">

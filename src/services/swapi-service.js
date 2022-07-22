@@ -67,11 +67,12 @@ export default class SwapiService {
 		};
 	};
 	_transformPerson = (person) => {
+		console.log(person);
 		return {
 			id: this._extractId(person),
 			name: person.name,
 			gender: person.gender,
-			birthYear: person.birthYear,
+			birthYear: person.birth_year,
 			eyeColor: person.eyeColor,
 		};
 	};
