@@ -2,12 +2,12 @@ import React, { Component } from "react";
 
 import Header from "../header";
 import RandomPlanet from "../random-planet";
-import PeoplePage from "../people-page";
 import Row from "../row";
-import ItemDetails from "../item-details";
+import ItemDetails, { Record } from "../item-details/item-details";
 import "./app.css";
 import ErrorIndicator from "../error-indicator";
 import SwapiService from "../../services/swapi-service";
+
 export default class App extends Component {
 	state = {
 		hasError: false,
@@ -24,18 +24,21 @@ export default class App extends Component {
 		const { getPerson, getStarship, getPersonImage, getStarshipImage } =
 			this.swapiService;
 		const personDetails = (
-			<ItemDetails
-				itemId={11}
-				getData={getPerson}
-				getImageUrl={getPersonImage}
-			/>
+			<ItemDetails itemId={11} getData={getPerson} getImageUrl={getPersonImage}>
+				<Record field="gender" label="Gender" />
+				<Record field="gender" label="Gender" />
+			</ItemDetails>
 		);
 		const starshipDetails = (
 			<ItemDetails
 				itemId={5}
 				getData={getStarship}
 				getImageUrl={getStarshipImage}
-			/>
+			>
+				<Record field="name" label="Name" />
+				<Record field="length" label="Length" />
+				<Record field="costCredits" label="Cost" />
+			</ItemDetails>
 		);
 		return (
 			<div>
