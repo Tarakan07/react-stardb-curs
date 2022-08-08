@@ -2,7 +2,6 @@ import React from "react";
 import ItemDetails, { Record } from "../item-details/item-details";
 import { WithSwapiServices } from "../hoc-helpers";
 const PlanetDetails = (props) => {
-	console.log(props);
 	return (
 		<ItemDetails {...props}>
 			<Record field="population" label="Population" />

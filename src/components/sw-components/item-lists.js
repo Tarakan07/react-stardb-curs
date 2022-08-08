@@ -20,6 +20,7 @@ const mapPlanetMethodsToProps = (swapiService) => {
 	};
 };
 const mapStarshipMethodsToProps = (swapiService) => {
+	
 	return {
 		getData: swapiService.getAllStarships,
 	};
