@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Spinner from "../spinner";
 import ErrorIndicator from "../error-indicator";
 import SwapiService from "../../services/swapi-service";
-
+import PropTypes from "prop-types";
 import "./random-planet.css";
 
 export default class RandomPlanet extends Component {
@@ -77,9 +77,12 @@ export default class RandomPlanet extends Component {
 		);
 	}
 }
-// RandomPlanet.defaultProps = {
-// 	updateInterval: 10000,
-// };
+RandomPlanet.defaultProps = {
+	updateInterval: 10000,
+};
+RandomPlanet.propTypes = {
+	updateInterval: PropTypes.number,
+};
 const PlanetView = ({ planet }) => {
 	const { id, name, population, rotationPeriod, diameter } = planet;
 
