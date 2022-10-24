@@ -29,6 +29,8 @@ const PersonList = compose(
 	withChildFunction(renderName)
 )(ItemList);
 
+
+
 // const PersonList2 = WithSwapiServices(mapPersonMethodsToProps)(
 // 	withData(withChildFunction(renderName)(ItemList))
 // );
@@ -41,11 +43,7 @@ const PlanetList = compose(
 // const PlanetList2 = WithSwapiServices(mapPlanetMethodsToProps)(
 // 	withData(withChildFunction(renderName)(ItemList))
 // );
-const StarshipList = compose(
-	WithSwapiServices(mapStarshipMethodsToProps),
-	withData,
-	withChildFunction(renderName)
-)(ItemList);
+const StarshipList = compose(WithSwapiServices(mapStarshipMethodsToProps),withData,withChildFunction(renderName))(ItemList);
 
 // const StarshipList2 = WithSwapiServices(mapStarshipMethodsToProps)(
 // 	withData(withChildFunction(renderName)(ItemList))
