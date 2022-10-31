@@ -1,5 +1,5 @@
 export default class SwapiService {
-	er = "s";
+
 	_apiBase = "https://swapi.dev/api";
 	_imageBase = "https://starwars-visualguide.com/assets/img";
 
