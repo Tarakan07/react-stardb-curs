@@ -27,7 +27,7 @@ export default class App extends Component {
 							<RandomPlanet updateInterval={5000} />
 							
 								<Route path="/" exact  render={()=><h2>Welcome to StarDB</h2>}/>
-								<Route path="/people" component={PeoplePage}/>
+								<Route path="/people/:id?" component={PeoplePage}/>
 								<Route path='/planet' component={PlanetPage}/>
 								
 								<Route path='/starship' exact component={StarshipPage}/>
