@@ -1,10 +1,10 @@
-import { render } from "@testing-library/react";
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import Row from "../row/row";
 import { PersonDetails, PersonList } from "../sw-components";
 import { withRouter } from "react-router-dom";
 const PeoplePage=({history,match})=>{
 	const {id}=match.params;
+
 	return(
 		<Row
 				left={<PersonList onItemSelected={(id)=>history.push(id)} />}
